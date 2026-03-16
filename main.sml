@@ -4,10 +4,31 @@
 (* a given string is a palindrome. *)
 
 
-fun is_palindrome _ = _;
 
-fun reverse_string _ = _;
+fun reverse_string(string) = 
+    (* if string is empty, return imploded empty list *)
+    let fun reverser([], reversed_list) = implode(reversed_list)
+    (* if string is not empty, add first char to reversed list, then call itself recursively *)
+    (* reverses the string, by adding each char to front of new list, and the returns the new list as a string*)
+          | reverser(x::xs, reversed_list) = reverser(xs, x::reversed_list)
+    in 
+    (* explode "string" into a list using the helper function reverser, reverser does as shown above*)
+        reverser(explode string, []) 
+    end;
 
-fun remove_non_alphabetic _ = _;
+
+fun remove_non_alphabetic(string) = 
+    (* if string is empty, return imploded cleaned list *)
+    let fun remover([], cleaned_list) = implode(cleaned_list);
+    in 
+        remover(explode string, [])
+    end;
 
 fun change_to_lowercase _ = _;
+    (* if string is empty, return imploded cleaned list *)
+    let fun lower([], cleaned_list) = implode(cleaned_list);
+    in 
+        lower(explode string, [])
+    end;
+
+fun is_palindrome string = reverse_string string = string;
