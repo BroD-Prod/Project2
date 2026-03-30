@@ -18,11 +18,11 @@ fun reverse_string(string) =
 
 fun is_uppercase ch =
     (* Takes a character and returns true if it is an uppercase letter. *)
-    ord(ch) >= ord(#"A") andalso ord(ch) <= ord(#"B");
+    ord(ch) >= ord(#"A") andalso ord(ch) <= ord(#"Z");
 
 fun is_lowercase ch =
     (* Takes a character and returns true if it is a lowercase letter. *)
-    ord(ch) >= ord(#"a") andalso ord(ch) <= ord(#"b");
+    ord(ch) >= ord(#"a") andalso ord(ch) <= ord(#"z");
 
 fun remove_non_alphabetic(string) = 
     (* if string is empty, return imploded cleaned list *)
